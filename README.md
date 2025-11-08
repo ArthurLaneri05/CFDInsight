@@ -10,10 +10,6 @@ by [Arthur Laneri](https://www.linkedin.com/in/arthur-laneri).
   <a href="LICENSE">
     <img alt="License: AGPL v3" src="https://img.shields.io/badge/License-AGPL_v3-green.svg">
   </a>
-  <!-- Downloads -->
-  <a href="https://github.com/ArthurLaneri05/CFDInsight/releases">
-  <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/OWNER/REPO/total.svg">
-  </a>
 </p>
 <hl>
 
