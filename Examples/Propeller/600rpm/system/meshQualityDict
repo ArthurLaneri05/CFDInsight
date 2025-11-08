@@ -1,0 +1,39 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      meshQualityDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+//- Strict enough for good CFD results, but not too aggressive
+maxNonOrtho          70;      // Acceptable for most solvers (lower is better)
+maxBoundarySkewness  10;      // Stricter for better BC handling
+maxInternalSkewness   4;      // Internal skewness should be minimal
+maxConcave           70;      // Allows some concavity; reduce to ~70 for sensitive cases
+minVol            1e-12;      // Slightly tighter volume constraint
+minTetQuality     -1e30;      // Improved tet regularity
+minArea            1e-9;      // Enforce minimum face area
+minTwist           0.02;      // Keep as is unless twist is a problem
+minTriangleTwist   0.01;      // Fluent-compatible; keep >0
+minDeterminant    0.001;      // Standard threshold; ensures non-folded cells
+minFaceWeight      0.02;      // Typical lower limit for cell alignment
+minVolRatio        1e-5;      // Enforces more uniform volumes
+
+nSmoothScale       4;
+errorReduction     0.75;
+
+// Enable if using collapsing logic in snapping
+minVolCollapseRatio 0.1;
+
+
+
+// ************************************************************************* //

@@ -1,0 +1,38 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  8                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       IOobject;
+    location    "0";
+    object      initialConditions;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+// BCs
+magU                 2;		// In m/s
+omega		     600;	// In rpm
+
+
+// For force coefficients
+rho		   1000;	// In kg/m^3
+
+
+// Relaxation factors
+pRF                  0.3;
+URF                  0.7;
+kRF                  0.7;
+omegaRF              0.7;
+
+
+// Options for NearWallFields
+U_near_d             0.001;
+

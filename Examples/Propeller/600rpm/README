@@ -1,0 +1,18 @@
+How to run your first steps in CFDInsight:
+
+PRE-REQUISITES:
+    * ParaView v6.0 or superior (compatibility with previous versions is not guaranteed).
+    * OpenFOAM v2312 or superior.
+
+1) place the `Propeller` dict where you prefer.
+2) Open a terminal window in `path/to/Propeller/600rpm`.
+3) Run your OpenFOAM alias in the terminal (if you don' have one type `path/to/openfoamXXXX/etc/bashrc`).
+4) Run the commands `. runMesh.sh` and `. runSolve.sh`.
+
+5) Take a look at `CFDInsight/global_settings.py` to customize settings.
+   (e.g. to minimize your post-processing time, make `pvserver_np` equal to the number of 
+    CPU processors you are willing to use).
+
+6) Take a look at the `initialConditions`, `Keywords.py` and `Preferences.py` files.
+7) Call `CFDInsight` in the terminal you've previously opened.
+8) Above the `DeltaSurfaces` settings, you will find instructions to create a simple baseline to compare this case to.

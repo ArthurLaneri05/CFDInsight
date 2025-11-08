@@ -1,0 +1,176 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  8                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeatureExtractDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+#include "./initialConditions"
+
+
+
+Hub.obj
+{
+    extractionMethod    extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        // - 0  : selects no edges
+        // - 180: selects all edges
+        includedAngle   150;
+    }
+
+    subsetFeatures
+    {     
+        nonManifoldEdges       no;
+
+        openEdges       yes;
+    }
+
+        // Write features to stl format for postprocessing
+        writeObj	no;
+}
+
+Blade0.obj
+{
+    extractionMethod    extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        // - 0  : selects no edges
+        // - 180: selects all edges
+        includedAngle   150;
+    }
+
+    subsetFeatures
+    {     
+        nonManifoldEdges       no;
+
+        openEdges       yes;
+    }
+
+        // Write features to stl format for postprocessing
+        writeObj	no;
+}
+
+Blade1.obj
+{
+    extractionMethod    extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        // - 0  : selects no edges
+        // - 180: selects all edges
+        includedAngle   150;
+    }
+
+    subsetFeatures
+    {     
+        nonManifoldEdges       no;
+
+        openEdges       yes;
+    }
+
+        // Write features to stl format for postprocessing
+        writeObj	no;
+}
+
+Blade2.obj
+{
+    extractionMethod    extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        // - 0  : selects no edges
+        // - 180: selects all edges
+        includedAngle   150;
+    }
+
+    subsetFeatures
+    {     
+        nonManifoldEdges       no;
+
+        openEdges       yes;
+    }
+
+        // Write features to stl format for postprocessing
+        writeObj	no;
+}
+
+Blade3.obj
+{
+    extractionMethod    extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        // - 0  : selects no edges
+        // - 180: selects all edges
+        includedAngle   150;
+    }
+
+    subsetFeatures
+    {     
+        nonManifoldEdges       no;
+
+        openEdges       yes;
+    }
+
+        // Write features to stl format for postprocessing
+        writeObj	no;
+}
+
+Blade4.obj
+{
+    extractionMethod    extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        // - 0  : selects no edges
+        // - 180: selects all edges
+        includedAngle   150;
+    }
+
+    subsetFeatures
+    {     
+        nonManifoldEdges       no;
+
+        openEdges       yes;
+    }
+
+        // Write features to stl format for postprocessing
+        writeObj	no;
+}
+
+MRF.obj
+{
+    extractionMethod    extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        // - 0  : selects no edges
+        // - 180: selects all edges
+        includedAngle   150;
+    }
+
+    subsetFeatures
+    {     
+        nonManifoldEdges       no;
+
+        openEdges       yes;
+    }
+
+        // Write features to stl format for postprocessing
+        writeObj	no;
+}
+
+
+// ************************************************************************* //

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+.idea/
+*.vtu
+*.vtk
+*.vtm
+*.stl
+*.foam
+*.csv
+*.jpg
+*.zip

@@ -1,0 +1,61 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  8                                |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+#include 	"../../initialConditions"
+
+
+Propeller_forces
+{
+    
+    type            forces;
+    libs            ("libforces.so");
+    patches         (Propeller_Group);
+    
+    writeControl    timeStep;
+    timeInterval    1;
+    log         false;
+
+
+    rhoInf      $rho;           // Fluid density [kg/m^3]
+    rho         rhoInf;        
+    pRef            0;		// Reference pressure [Pa]	
+
+    porosity        no;		// Include porosity effects?
+
+    // Store and write volume field representations of forces and moments
+    writeFields     no;
+
+    // Centre of rotation for moment calculations, always at the origin
+    CofR            (0 0 0);	
+}
+
+Hub_forces
+{
+    
+    type            forces;
+    libs            ("libforces.so");
+    patches         (Hub);
+    
+    writeControl    timeStep;
+    timeInterval    1;
+    log         false;
+
+
+    rhoInf      $rho;           // Fluid density [kg/m^3]
+    rho         rhoInf;        
+    pRef            0;		// Reference pressure [Pa]	
+
+    porosity        no;		// Include porosity effects?
+
+    // Store and write volume field representations of forces and moments
+    writeFields     no;
+
+    // Centre of rotation for moment calculations, always at the origin
+    CofR            (0 0 0);	
+}
+
+// ************************************************************************* //

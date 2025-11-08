@@ -1,0 +1,81 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  8                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+xmin 		-.5;	
+xmax  		 1;	
+width 		 1;	
+height 		 1;	
+CellEdgeLength .1;	
+
+
+vertices
+(
+    	
+	($xmin #calc"-.5*$width" #calc"-.5*$height")
+	($xmax #calc"-.5*$width" #calc"-.5*$height")
+	($xmax #calc".5*$width"  #calc"-.5*$height")
+	($xmin #calc".5*$width"  #calc"-.5*$height")
+
+	($xmin #calc"-.5*$width" #calc".5*$height")
+	($xmax #calc"-.5*$width" #calc".5*$height")
+	($xmax #calc".5*$width"  #calc".5*$height")
+	($xmin #calc".5*$width"  #calc".5*$height")
+	
+);
+
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) (#calc"(mag($xmin)+mag($xmax)) / $CellEdgeLength" #calc"mag($width) / $CellEdgeLength" #calc"mag($height) / $CellEdgeLength") simpleGrading (1 1 1)
+);
+
+edges
+(
+);
+
+boundary
+(
+    sides
+    {
+        type symmetry;
+        faces
+        (
+            (3 7 6 2)
+            (1 5 4 0)
+            (0 3 2 1)
+            (4 5 6 7)
+        );
+    }
+    inlet
+    {
+        type patch;
+        faces
+        (
+            (0 4 7 3)
+        );
+    }
+    outlet
+    {
+        type patch;
+        faces
+        (
+            (2 6 5 1)
+        );
+    }
+);
+
+// ************************************************************************* //
