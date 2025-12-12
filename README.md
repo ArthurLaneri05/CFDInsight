@@ -133,7 +133,7 @@ velocity in the Cp expression) and can overlay key values on outputs for context
 - Add `CFDInsight` to your PYTHONPATH so IDEs can show docstrings on hover:
   ```
   bash
-  echo 'export PYTHONPATH="/path/to/CFDInsight:$PYTHONPATH"' >> ~/.bashrc
+  echo 'export PYTHONPATH="/path/to/CFDInsight${PYTHONPATH:+:$PYTHONPATH}"' >> ~/.bashrc
   source ~/.bashrc
   ```
 
